@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ doctor.user.get_full_name }} - Doctor Details</title>
+  <link href="/static/css/doctor_detail.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <table>
+      <tr>
+        <td colspan="2">
+          <h2 class="drname">Dr. {{ doctor.first_name }} {{ doctor.last_name }}</h2>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="{{ doctor.profile_picture.url }}" alt="Profile Picture">
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Specialization:</strong></td>
+        <td>{{ doctor.specialization }}</td>
+      </tr>
+      <tr>
+        <td><strong>Location:</strong></td>
+        <td>{{ doctor.location }}</td>
+      </tr>
+      <tr>
+        <td><strong>Email:</strong></td>
+        <td>{{ doctor.email }}</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <p><strong>Details:</strong><br>{{ doctor.details|linebreaksbr }}</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <a href="{% url 'home' %}" class="back-btn">Back</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
